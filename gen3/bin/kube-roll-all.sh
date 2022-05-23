@@ -272,13 +272,13 @@ else
   gen3_log_info "not deploying wts - no manifest entry for .versions.wts"
 fi
 
-if g3k_manifest_lookup .versions.argo-wrapper 2> /dev/null; then
+if g3k_manifest_lookup '.versions["argo-wrapper"]' 2> /dev/null; then
   gen3 roll argo-wrapper &
 else
   gen3_log_info "not deploying argo-wrapper - no manifest entry for .versions.argo-wrapper"
 fi
 
-if g3k_manifest_lookup .versions.cohort-middleware 2> /dev/null; then
+if g3k_manifest_lookup '.versions["cohort-middleware"]' 2> /dev/null; then
   gen3 roll cohort-middleware &
 else
   gen3_log_info "not deploying cohort-middleware - no manifest entry for .versions.cohort-middleware"
